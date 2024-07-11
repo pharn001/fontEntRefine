@@ -3,7 +3,7 @@
 import { useShow } from "@refinedev/core";
 import { Show } from "@/shadcn/components/crud";
 import { type IUser } from "../../interface";
-import { statusBadge } from "../../lib/utils";
+// import { statusBadge } from "../../lib/utils";
 
 export default function UserShow({ params }: { params: { id: number } }): JSX.Element {
   const { queryResult } = useShow<IUser>();
@@ -13,7 +13,7 @@ export default function UserShow({ params }: { params: { id: number } }): JSX.El
     <Show>
       <Show.Row title="ID" content={record?.id} />
       <Show.Row title="Username" content={record?.username} />
-      <Show.Row title="Status" content={statusBadge(record?.isActive as boolean)} />
+      {/* <Show.Row title="Status" content={statusBadge(record?.isActive as boolean)} /> */}
     </Show>
   );
 }
