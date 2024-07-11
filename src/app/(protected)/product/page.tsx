@@ -11,25 +11,24 @@ function page() {
   const { table } = useTableProduct();
   return (
     <>
-      <div>product</div>
-      <List>Product</List>
-      <Table table={table}>
-        <Table.Column header="name" id="name" accessorKey="name" />
-        <Table.Column header="price" id="price" accessorKey="price" />
-        <Table.Column header="size" id="size" accessorKey="size" />
-        <Table.Column header="stock" id="stock" accessorKey="stock" />
-        {ImageColumn()}
-        {getActionsColumn({ resource: "product" })}
-      </Table>
-
-      <CardView table={table} className="w-[340px] h-[350px]">
-        <CardView.Row header="User" id="User" accessorKey="user" isHeader={true} />
-        <CardView.Row header="name" id="name" accessorKey="name"/>
-        <CardView.Row header="price" id="price" accessorKey="price"/>
-        <CardView.Row header="stock" id="stock" accessorKey="stock"/>
-        {ImageRow()}
-        {getActionsRow({ resource: "product" })}
-      </CardView>
+      <List>
+        <Table table={table}>
+          <Table.Column header="name" id="name" accessorKey="name" />
+          <Table.Column header="price" id="price" accessorKey="price" />
+          <Table.Column header="size" id="size" accessorKey="size" />
+          <Table.Column header="stock" id="stock" accessorKey="stock" />
+          {ImageColumn()}
+          {getActionsColumn({ resource: "product" })}
+        </Table>
+        <CardView table={table} className="w-[340px] h-[350px]">
+          <CardView.Row header="User" id="User" accessorKey="user" isHeader={true} />
+          <CardView.Row header="name" id="name" accessorKey="name"/>
+          <CardView.Row header="price" id="price" accessorKey="price"/>
+          <CardView.Row header="stock" id="stock" accessorKey="stock"/>
+          {ImageRow()}
+          {getActionsRow({ resource: "product" })}
+        </CardView>
+      </List>
     </>
   );
 }

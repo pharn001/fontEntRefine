@@ -42,7 +42,7 @@ function renderDeleteAction({ original, resource, hide }: IActionsProps) {
         title="Delete"
         row={original}
         withForceDelete={true}
-        resource={"product"}
+        resource={resource}
         icon={<Trash2 size={16} />}
       />
     );
