@@ -35,13 +35,14 @@ function renderEditAction({ original, resource, hide }: IActionsProps) {
 }
 
 function renderDeleteAction({ original, resource, hide }: IActionsProps) {
+  console.log("original", original);
   if (!hide) {
     return (
       <Table.DeleteAction
         title="Delete"
         row={original}
         withForceDelete={true}
-        resource={resource}
+        resource={"product"}
         icon={<Trash2 size={16} />}
       />
     );
