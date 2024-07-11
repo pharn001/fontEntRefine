@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "lib": ["dom", "dom.iterable", "esnext", "es2022"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"],
+      "@/*": ["./src/*"],
+      "@public/*": ["./public/*"],
+      "@storybook/*": ["./.storybook/*"],
+      "@app/*": ["src/app/*"],
+      "@career": ["src/app/(protected)/(career)/index"],
+      "@personal": ["src/app/(protected)/(personal)/index.ts"],
+      "@hr": ["src/app/(protected)/(hr)/index"],
+      "@user": ["src/app/(protected)/user/index.ts"]
+    },
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/(protected)/(personal)/profile/containers/card/employeeCardProfile.tsx"],
+  "exclude": ["node_modules"]
+}
