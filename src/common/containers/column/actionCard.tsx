@@ -5,7 +5,7 @@ import { Table } from "@src/shadcn/components/table";
 import { CardView } from "@src/shadcn/components/table/card-view";
 import { Edit, Trash2 } from "lucide-react";
 
-export function getActionsRow(resource: string) {
+export function getActionsRow({ resource }: { resource: string }) {
   return (
     <CardView.Row
       accessorKey={"id"}
