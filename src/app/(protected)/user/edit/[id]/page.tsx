@@ -9,7 +9,7 @@ export default function UserEdit({ params }: { params: { id: number } }): JSX.El
     <Edit>
       <div className="flex justify-center">
         <div className="flex flex-col border rounded-2xl">
-          <div className="w-full p-5 text-2xl font-bold text-center text-white bg-blue-500 border rounded-t-2xl">
+          <div className="w-full p-5 text-2xl font-bold text-center text-primary-foreground bg-primary border border-border rounded-t-2xl">
             ຟອມແກ້ໄຂຂໍ້ມູນບັນຊີເຂົ້າລະບົບ
           </div>
           <UserForm id={params.id}/>

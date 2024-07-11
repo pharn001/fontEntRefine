@@ -9,6 +9,7 @@ import { getActionsColumn } from "@src/common/containers/column/action";
 import { dateJoinedColumn, usernameColumn, groupColumn, statusColumn, UsernameRow, StatusRow, dateJoinetRow, GroupRow, ImageColumn } from "./containers/column";
 import { useMemo } from "react";
 import { CardView } from "@src/shadcn/components/table/card-view";
+import { getActionsRow } from "@src/common/containers/column/actionCard";
 
 export default function UserList(): JSX.Element {
   const { table } = useTableUser();
@@ -30,6 +31,7 @@ export default function UserList(): JSX.Element {
           {dateJoinetRow()}
           {GroupRow()}
           {ImageColumn()}
+          {getActionsRow("holiday")}
         </CardView>
       </List>
     </div>
