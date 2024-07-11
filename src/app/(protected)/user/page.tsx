@@ -31,7 +31,7 @@ export default function UserList(): JSX.Element {
           {dateJoinetRow()}
           {GroupRow()}
           {ImageColumn()}
-          {getActionsRow("holiday")}
+          {getActionsRow("user")}
         </CardView>
       </List>
     </div>
