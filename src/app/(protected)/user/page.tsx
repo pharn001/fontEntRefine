@@ -6,7 +6,7 @@ import { useTable } from "@refinedev/react-table";
 import { type IUser } from "./interface";
 import { SequenceColumn } from "@src/common/containers/column/select";
 import { getActionsColumn } from "@src/common/containers/column/action";
-import { dateJoinedColumn, usernameColumn, groupColumn, statusColumn, UsernameRow, StatusRow, dateJoinetRow, GroupRow, ImageColumn } from "./containers/column";
+import { dateJoinedColumn, groupColumn, statusColumn, UsernameRow, StatusRow, dateJoinetRow, GroupRow, ImageColumn } from "./containers/column";
 import { useMemo } from "react";
 import { CardView } from "@src/shadcn/components/table/card-view";
 import { getActionsRow } from "@src/common/containers/column/actionCard";
@@ -18,7 +18,7 @@ export default function UserList(): JSX.Element {
       <List>
         <Table table={table}>
           {SequenceColumn()}
-          {usernameColumn()}
+          <Table.Column header="Username" id="username" accessorKey="username" />
           {statusColumn()}
           {groupColumn()}
           {dateJoinedColumn()}
