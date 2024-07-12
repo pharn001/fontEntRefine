@@ -18,12 +18,13 @@
       "@src/*": ["src/*"],
       "@/*": ["./src/*"],
       "@public/*": ["./public/*"],
+      "@common/*": ["src/common/*"],
       "@storybook/*": ["./.storybook/*"],
       "@app/*": ["src/app/*"],
       "@career": ["src/app/(protected)/(career)/index"],
       "@personal": ["src/app/(protected)/(personal)/index.ts"],
       "@hr": ["src/app/(protected)/(hr)/index"],
-      "@user": ["src/app/(protected)/user/index.ts"]
+      "@user": ["src/app/(protected)/user/index.ts"],
     },
     "incremental": true,
     "plugins": [

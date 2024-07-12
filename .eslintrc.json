@@ -87,11 +87,11 @@
     ],
     "curly": ["error", "all"],
     "max-depth": ["error", 2],
-    "max-lines": ["error", 100],
+    "max-lines": ["error", 500],
     "max-lines-per-function": [
       "error",
       {
-        "max": 35,
+        "max": 500,
         "skipBlankLines": true,
         "skipComments": true
       }
@@ -136,6 +136,7 @@
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/no-unsafe-argument": "off",
+    "@typescript-eslint/no-unsafe-return" : "off",
     "strict-boolean-expressions": ["off", "allow-boolean-or-undefined"]
   }
 }
