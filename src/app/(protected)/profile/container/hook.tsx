@@ -1,10 +1,9 @@
-/* eslint-disable no-magic-numbers */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { useForm } from "@refinedev/react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import { validateDateSchema, validateImageSchema } from "@common/lib/validation/validationFormUtils";
 import { type FormAction } from "@refinedev/core";
-import { z } from "zod";
 
 export const useProfileForm = ({ action, id }: { id?: number, action: FormAction }) => {
   const { ...form } = useForm<{ id?: number }>({
@@ -38,15 +37,17 @@ export const useProfileForm = ({ action, id }: { id?: number, action: FormAction
   return { form };
 };
 
+const minPhoneNumberLength = 8;
+
 export const profileSchema = () => {
   return z
     .object({
       fullname: z.string().min(1, { message: "ກະລຸນາໃສ່ຊື່ແທ້ ແລະ ນາມສະກຸນ" }),
-      nickname: z.string().min(1, { message: "nickname is required" }),
+      nickname: z.nullable(z.string()),
       age: z.number().or(z.string().min(1, { message: "ກະລຸນາປ້ອນອາຍຸ" })),
       phone: z
         .string()
-        .min(8, { message: "ກະລຸນາໃສ່ເບີໂທ" })
+        .min(minPhoneNumberLength, { message: "ກະລຸນາໃສ່ເບີໂທ" })
         .regex(/^(20\d{8})$/, { message: "ກະລຸນາປ້ອນເບີໂທ ໂດຍຮູບແບບທີ່ຖືກຕ້ອງ (20XXXXXXXX)" }),
       gender: z.string().min(1, { message: "ກະລຸນາເລືອກເພດ" }),
       birthday: validateDateSchema({ message: "ກະລຸນາເລືອກຮູບພາບ" }),

@@ -3,16 +3,17 @@ import { DatePickerField } from "@src/shadcn/components/form/datepicker";
 import { Form } from "@src/shadcn/components/form";
 import { Input } from "@src/shadcn/elements";
 import { useSelect } from "@refinedev/core";
-import { useProfileForm } from "../hook";
+import { useProfileForm } from "./hook";
 
 export const ProfileForm: React.FC<any> = ({ id, action }) => {
   const { form } = useProfileForm({ action, id });
   const district = useDistrictSelect();
+  console.log("form", form.watch());
   return (
     <div className="rounded-full w-96 sm:w-[710px]  ">
       <Form {...form}>
         <Form.Field {...form} name="image" require={false}>
-          <Form.FileInputImage className="w-64 h-64 pt-1 rounded-full" />
+          <Form.FileInputImage className="w-64 h-64 rounded-full pt-1" />
         </Form.Field>
         <div className="flex flex-wrap gap-2">
           <div className="w-80">

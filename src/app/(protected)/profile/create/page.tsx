@@ -1,16 +1,19 @@
 "use client";
-import { Create } from "@src/shadcn/components/crud";
 import React from "react";
-import { ProfileForm } from "../components/form";
+import { Create } from "@/shadcn/components/crud";
+import { ProfileForm } from "../container/from";
 
-const ProfileCreate = () => {
+export default function ProfileCreate(): JSX.Element {
   return (
-    <div>
-      <Create>
-        <ProfileForm action="create"/>
-      </Create>
-    </div>
+    <Create>
+      <div className="flex justify-center">
+        <div className="flex flex-col border rounded-2xl">
+          <div className="w-full p-5 text-2xl font-bold text-center text-primary-foreground bg-primary border border-border rounded-t-2xl">
+            ສ້າງໂປຣໄຟລ໌
+          </div>
+          <ProfileForm action="create"/>
+        </div>
+      </div>
+    </Create>
   );
-};
-
-export default ProfileCreate;
+}

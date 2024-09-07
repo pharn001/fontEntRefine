@@ -1,17 +1,11 @@
-"use client";
+"use client"
+import React from 'react'
+import { ProfileForm } from '../../container/from'
 
-import { Edit } from "@src/shadcn/components/crud";
-import React from "react";
-import { ProfileForm } from "../../components/form";
-
-const ProfileEdit = () => {
+export default function profile({ params }: { params: { id: number } }): JSX.Element {
   return (
     <div>
-      <Edit>
-        <ProfileForm />
-      </Edit>
+    <ProfileForm id={params.id} action="edit"/>
     </div>
-  );
-};
-
-export default ProfileEdit;
+  )
+}
